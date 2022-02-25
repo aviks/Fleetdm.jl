@@ -1,0 +1,13 @@
+name = "Fleetdm"
+uuid = "b59b0a0d-53c2-4291-959f-8e09d58f6318"
+authors = ["Avik Sengupta"]
+version = "1.0.0"
+
+[compat]
+julia = "1.6"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
