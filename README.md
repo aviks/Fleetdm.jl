@@ -8,19 +8,19 @@ A Julia client for the [Fleet](https://fleetdm.com/) device management server.
 
 ## Usage
 
-```
+```julia
 using Fleetdm
 ```
 
 
-```
+```julia
 token = "woY...........g=="  # Or fetch from ENV
 hdrs = Dict{String,String}("Authorization"=>"Bearer $token")
 using Swagger
-client = Swagger.client("https://dogfood.fleetdm.com", hdrs)
+client = Swagger.client("https://dogfood.fleetdm.com", headers=hdrs)
 ```
 
-```
+```julia
 julia> hostapi = HostsApi(client)
 HostsApi(Swagger.Client("https://dogfood.fleetdm.com", Dict("Authorization" => "Bearer woY.....
 
