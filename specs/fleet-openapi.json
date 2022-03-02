@@ -1,0 +1,3368 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Fleet",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://{{host}}"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      },
+      "noauthAuth": {
+        "type": "http",
+        "scheme": "noauth"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Hosts"
+    },
+    {
+      "name": "Labels"
+    },
+    {
+      "name": "Users"
+    },
+    {
+      "name": "Software"
+    }
+  ],
+  "paths": {
+    "/api/v1/fleet/hosts": {
+      "get": {
+        "tags": [
+          "Hosts"
+        ],
+        "summary": "List Hosts",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 08 Nov 2021 20:42:48 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "gzip"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "Expect-CT": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "6ab1a145ea1012a3-MIA"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "hosts": [
+                    {
+                      "created_at": "2021-11-03T03:52:09Z",
+                      "updated_at": "2021-11-08T20:42:46Z",
+                      "id": 1,
+                      "detail_updated_at": "2021-11-08T20:19:44Z",
+                      "label_updated_at": "2021-11-08T20:37:07Z",
+                      "policy_updated_at": "1970-01-02T00:00:00Z",
+                      "last_enrolled_at": "2021-11-03T03:52:09Z",
+                      "seen_time": "2021-11-08T20:42:47Z",
+                      "refetch_requested": false,
+                      "hostname": "7cce2292a94c",
+                      "uuid": "b14a1901-fe88-451a-8212-02c396e2cbb8",
+                      "platform": "rhel",
+                      "osquery_version": "4.5.1",
+                      "os_version": "CentOS Linux 8.3.2011",
+                      "build": "",
+                      "platform_like": "rhel",
+                      "code_name": "",
+                      "uptime": 492638000000000,
+                      "memory": 1028972544,
+                      "cpu_type": "x86_64",
+                      "cpu_subtype": "63",
+                      "cpu_brand": "DO-Regular",
+                      "cpu_physical_cores": 1,
+                      "cpu_logical_cores": 1,
+                      "hardware_vendor": "",
+                      "hardware_model": "",
+                      "hardware_version": "",
+                      "hardware_serial": "",
+                      "computer_name": "7cce2292a94c",
+                      "primary_ip": "172.18.0.4",
+                      "primary_mac": "02:42:ac:12:00:04",
+                      "distributed_interval": 10,
+                      "config_tls_refresh": 10,
+                      "logger_tls_period": 10,
+                      "team_id": null,
+                      "pack_stats": null,
+                      "team_name": null,
+                      "gigs_disk_space_available": 20.1,
+                      "percent_disk_space_available": 77,
+                      "issues": {
+                        "total_issues_count": 0,
+                        "failing_policies_count": 0
+                      },
+                      "status": "online",
+                      "display_text": "7cce2292a94c"
+                    },
+                    {
+                      "created_at": "2021-11-03T03:52:09Z",
+                      "updated_at": "2021-11-08T20:42:47Z",
+                      "id": 2,
+                      "detail_updated_at": "2021-11-08T20:37:35Z",
+                      "label_updated_at": "2021-11-08T20:42:43Z",
+                      "policy_updated_at": "1970-01-02T00:00:00Z",
+                      "last_enrolled_at": "2021-11-03T03:52:09Z",
+                      "seen_time": "2021-11-08T20:42:48Z",
+                      "refetch_requested": false,
+                      "hostname": "24152ad01af8",
+                      "uuid": "b14a1901-fe88-451a-8212-02c396e2cbb8",
+                      "platform": "ubuntu",
+                      "osquery_version": "4.5.1",
+                      "os_version": "Ubuntu 20.4.0",
+                      "build": "",
+                      "platform_like": "debian",
+                      "code_name": "",
+                      "uptime": 493709000000000,
+                      "memory": 1028972544,
+                      "cpu_type": "x86_64",
+                      "cpu_subtype": "63",
+                      "cpu_brand": "DO-Regular",
+                      "cpu_physical_cores": 1,
+                      "cpu_logical_cores": 1,
+                      "hardware_vendor": "",
+                      "hardware_model": "",
+                      "hardware_version": "",
+                      "hardware_serial": "",
+                      "computer_name": "24152ad01af8",
+                      "primary_ip": "172.18.0.3",
+                      "primary_mac": "02:42:ac:12:00:03",
+                      "distributed_interval": 10,
+                      "config_tls_refresh": 10,
+                      "logger_tls_period": 10,
+                      "team_id": null,
+                      "pack_stats": null,
+                      "team_name": null,
+                      "gigs_disk_space_available": 20.09,
+                      "percent_disk_space_available": 77,
+                      "issues": {
+                        "total_issues_count": 0,
+                        "failing_policies_count": 0
+                      },
+                      "status": "online",
+                      "display_text": "24152ad01af8"
+                    },
+                    {
+                      "created_at": "2021-11-03T03:52:09Z",
+                      "updated_at": "2021-11-08T20:42:47Z",
+                      "id": 3,
+                      "detail_updated_at": "2021-11-08T20:35:07Z",
+                      "label_updated_at": "2021-11-08T20:33:35Z",
+                      "policy_updated_at": "1970-01-02T00:00:00Z",
+                      "last_enrolled_at": "2021-11-03T03:52:09Z",
+                      "seen_time": "2021-11-08T20:42:48Z",
+                      "refetch_requested": false,
+                      "hostname": "654581b07f30",
+                      "uuid": "b14a1901-fe88-451a-8212-02c396e2cbb8",
+                      "platform": "rhel",
+                      "osquery_version": "4.5.1",
+                      "os_version": "CentOS 6.10.0",
+                      "build": "",
+                      "platform_like": "rhel",
+                      "code_name": "",
+                      "uptime": 493561000000000,
+                      "memory": 1028972544,
+                      "cpu_type": "x86_64",
+                      "cpu_subtype": "63",
+                      "cpu_brand": "DO-Regular",
+                      "cpu_physical_cores": 1,
+                      "cpu_logical_cores": 1,
+                      "hardware_vendor": "",
+                      "hardware_model": "",
+                      "hardware_version": "",
+                      "hardware_serial": "",
+                      "computer_name": "654581b07f30",
+                      "primary_ip": "172.18.0.2",
+                      "primary_mac": "02:42:ac:12:00:02",
+                      "distributed_interval": 10,
+                      "config_tls_refresh": 10,
+                      "logger_tls_period": 10,
+                      "team_id": null,
+                      "pack_stats": null,
+                      "team_name": null,
+                      "gigs_disk_space_available": 20.1,
+                      "percent_disk_space_available": 77,
+                      "issues": {
+                        "total_issues_count": 0,
+                        "failing_policies_count": 0
+                      },
+                      "status": "online",
+                      "display_text": "654581b07f30"
+                    },
+                    {
+                      "created_at": "2021-11-03T03:52:10Z",
+                      "updated_at": "2021-11-08T20:42:46Z",
+                      "id": 4,
+                      "detail_updated_at": "2021-11-08T20:27:47Z",
+                      "label_updated_at": "2021-11-08T20:32:53Z",
+                      "policy_updated_at": "1970-01-02T00:00:00Z",
+                      "last_enrolled_at": "2021-11-03T03:52:10Z",
+                      "seen_time": "2021-11-08T20:42:47Z",
+                      "refetch_requested": false,
+                      "hostname": "ed6b038f6670",
+                      "uuid": "b14a1901-fe88-451a-8212-02c396e2cbb8",
+                      "platform": "ubuntu",
+                      "osquery_version": "4.5.1",
+                      "os_version": "Ubuntu 14.4.0",
+                      "build": "",
+                      "platform_like": "debian",
+                      "code_name": "",
+                      "uptime": 493121000000000,
+                      "memory": 1028972544,
+                      "cpu_type": "x86_64",
+                      "cpu_subtype": "63",
+                      "cpu_brand": "DO-Regular",
+                      "cpu_physical_cores": 1,
+                      "cpu_logical_cores": 1,
+                      "hardware_vendor": "",
+                      "hardware_model": "",
+                      "hardware_version": "",
+                      "hardware_serial": "",
+                      "computer_name": "ed6b038f6670",
+                      "primary_ip": "172.18.0.8",
+                      "primary_mac": "02:42:ac:12:00:08",
+                      "distributed_interval": 10,
+                      "config_tls_refresh": 10,
+                      "logger_tls_period": 10,
+                      "team_id": null,
+                      "pack_stats": null,
+                      "team_name": null,
+                      "gigs_disk_space_available": 20.1,
+                      "percent_disk_space_available": 77,
+                      "issues": {
+                        "total_issues_count": 0,
+                        "failing_policies_count": 0
+                      },
+                      "status": "online",
+                      "display_text": "ed6b038f6670"
+                    },
+                    {
+                      "created_at": "2021-11-03T03:52:10Z",
+                      "updated_at": "2021-11-08T20:42:46Z",
+                      "id": 5,
+                      "detail_updated_at": "2021-11-08T20:26:20Z",
+                      "label_updated_at": "2021-11-08T20:41:52Z",
+                      "policy_updated_at": "1970-01-02T00:00:00Z",
+                      "last_enrolled_at": "2021-11-03T03:52:10Z",
+                      "seen_time": "2021-11-08T20:42:47Z",
+                      "refetch_requested": false,
+                      "hostname": "07e64c43ae10",
+                      "uuid": "b14a1901-fe88-451a-8212-02c396e2cbb8",
+                      "platform": "rhel",
+                      "osquery_version": "4.5.1",
+                      "os_version": "CentOS Linux 7.9.2009",
+                      "build": "",
+                      "platform_like": "rhel",
+                      "code_name": "",
+                      "uptime": 493034000000000,
+                      "memory": 1028972544,
+                      "cpu_type": "x86_64",
+                      "cpu_subtype": "63",
+                      "cpu_brand": "DO-Regular",
+                      "cpu_physical_cores": 1,
+                      "cpu_logical_cores": 1,
+                      "hardware_vendor": "",
+                      "hardware_model": "",
+                      "hardware_version": "",
+                      "hardware_serial": "",
+                      "computer_name": "07e64c43ae10",
+                      "primary_ip": "172.18.0.6",
+                      "primary_mac": "02:42:ac:12:00:06",
+                      "distributed_interval": 10,
+                      "config_tls_refresh": 10,
+                      "logger_tls_period": 10,
+                      "team_id": null,
+                      "pack_stats": null,
+                      "team_name": null,
+                      "gigs_disk_space_available": 20.1,
+                      "percent_disk_space_available": 77,
+                      "issues": {
+                        "total_issues_count": 0,
+                        "failing_policies_count": 0
+                      },
+                      "status": "online",
+                      "display_text": "07e64c43ae10"
+                    },
+                    {
+                      "created_at": "2021-11-03T03:52:10Z",
+                      "updated_at": "2021-11-08T20:42:45Z",
+                      "id": 6,
+                      "detail_updated_at": "2021-11-08T19:44:21Z",
+                      "label_updated_at": "2021-11-08T20:29:25Z",
+                      "policy_updated_at": "1970-01-02T00:00:00Z",
+                      "last_enrolled_at": "2021-11-03T03:52:10Z",
+                      "seen_time": "2021-11-08T20:42:46Z",
+                      "refetch_requested": false,
+                      "hostname": "9076abbc1de7",
+                      "uuid": "b14a1901-fe88-451a-8212-02c396e2cbb8",
+                      "platform": "ubuntu",
+                      "osquery_version": "4.5.1",
+                      "os_version": "Ubuntu 18.4.0",
+                      "build": "",
+                      "platform_like": "debian",
+                      "code_name": "",
+                      "uptime": 490515000000000,
+                      "memory": 1028972544,
+                      "cpu_type": "x86_64",
+                      "cpu_subtype": "63",
+                      "cpu_brand": "DO-Regular",
+                      "cpu_physical_cores": 1,
+                      "cpu_logical_cores": 1,
+                      "hardware_vendor": "",
+                      "hardware_model": "",
+                      "hardware_version": "",
+                      "hardware_serial": "",
+                      "computer_name": "9076abbc1de7",
+                      "primary_ip": "172.18.0.7",
+                      "primary_mac": "02:42:ac:12:00:07",
+                      "distributed_interval": 10,
+                      "config_tls_refresh": 10,
+                      "logger_tls_period": 10,
+                      "team_id": null,
+                      "pack_stats": null,
+                      "team_name": null,
+                      "gigs_disk_space_available": 20.1,
+                      "percent_disk_space_available": 77,
+                      "issues": {
+                        "total_issues_count": 0,
+                        "failing_policies_count": 0
+                      },
+                      "status": "online",
+                      "display_text": "9076abbc1de7"
+                    },
+                    {
+                      "created_at": "2021-11-03T03:52:10Z",
+                      "updated_at": "2021-11-08T20:42:44Z",
+                      "id": 7,
+                      "detail_updated_at": "2021-11-08T20:30:04Z",
+                      "label_updated_at": "2021-11-08T20:41:59Z",
+                      "policy_updated_at": "1970-01-02T00:00:00Z",
+                      "last_enrolled_at": "2021-11-03T03:52:10Z",
+                      "seen_time": "2021-11-08T20:42:45Z",
+                      "refetch_requested": false,
+                      "hostname": "7387c35f5660",
+                      "uuid": "b14a1901-fe88-451a-8212-02c396e2cbb8",
+                      "platform": "ubuntu",
+                      "osquery_version": "4.5.1",
+                      "os_version": "Ubuntu 16.4.0",
+                      "build": "",
+                      "platform_like": "debian",
+                      "code_name": "",
+                      "uptime": 493258000000000,
+                      "memory": 1028972544,
+                      "cpu_type": "x86_64",
+                      "cpu_subtype": "63",
+                      "cpu_brand": "DO-Regular",
+                      "cpu_physical_cores": 1,
+                      "cpu_logical_cores": 1,
+                      "hardware_vendor": "",
+                      "hardware_model": "",
+                      "hardware_version": "",
+                      "hardware_serial": "",
+                      "computer_name": "7387c35f5660",
+                      "primary_ip": "172.18.0.5",
+                      "primary_mac": "02:42:ac:12:00:05",
+                      "distributed_interval": 10,
+                      "config_tls_refresh": 10,
+                      "logger_tls_period": 10,
+                      "team_id": null,
+                      "pack_stats": null,
+                      "team_name": null,
+                      "gigs_disk_space_available": 20.1,
+                      "percent_disk_space_available": 77,
+                      "issues": {
+                        "total_issues_count": 0,
+                        "failing_policies_count": 0
+                      },
+                      "status": "online",
+                      "display_text": "7387c35f5660"
+                    },
+                    {
+                      "created_at": "2021-11-08T16:51:40Z",
+                      "updated_at": "2021-11-08T17:16:45Z",
+                      "id": 9,
+                      "detail_updated_at": "2021-11-08T16:51:49Z",
+                      "label_updated_at": "2021-11-08T16:51:49Z",
+                      "policy_updated_at": "1970-01-02T00:00:00Z",
+                      "last_enrolled_at": "2021-11-08T16:51:40Z",
+                      "seen_time": "2021-11-08T17:16:46Z",
+                      "refetch_requested": false,
+                      "hostname": "Utahraptor",
+                      "uuid": "00000000-0000-0000-0000-00D861108CB1",
+                      "platform": "windows",
+                      "osquery_version": "5.0.1",
+                      "os_version": "Microsoft Windows 10 Pro 10.0",
+                      "build": "19043",
+                      "platform_like": "windows",
+                      "code_name": "",
+                      "uptime": 1174124000000000,
+                      "memory": 51539607552,
+                      "cpu_type": "x86_64",
+                      "cpu_subtype": "-1",
+                      "cpu_brand": "Intel(R) Core(TM) i5-9600K CPU @ 3.70GHz",
+                      "cpu_physical_cores": 6,
+                      "cpu_logical_cores": 6,
+                      "hardware_vendor": "Micro-Star International Co., Ltd.",
+                      "hardware_model": "MS-7B98",
+                      "hardware_version": "-1",
+                      "hardware_serial": "Default string",
+                      "computer_name": "Utahraptor",
+                      "primary_ip": "172.23.64.1",
+                      "primary_mac": "00:15:5d:be:25:2d",
+                      "distributed_interval": 10,
+                      "config_tls_refresh": 60,
+                      "logger_tls_period": 10,
+                      "team_id": null,
+                      "pack_stats": null,
+                      "team_name": null,
+                      "gigs_disk_space_available": 753,
+                      "percent_disk_space_available": 26,
+                      "issues": {
+                        "total_issues_count": 0,
+                        "failing_policies_count": 0
+                      },
+                      "status": "offline",
+                      "display_text": "Utahraptor"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/fleet/hosts/{host_id}": {
+      "get": {
+        "tags": [
+          "Hosts"
+        ],
+        "summary": "Get Host By ID",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 08 Nov 2021 20:43:15 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "gzip"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "Expect-CT": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "6ab1a1ebdd2312a3-MIA"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "host": {
+                    "created_at": "2021-11-03T03:52:09Z",
+                    "updated_at": "2021-11-08T20:43:10Z",
+                    "software": [
+                      {
+                        "id": 98,
+                        "name": "glibc",
+                        "version": "2.28",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnu:glibc:2.28:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2016-10739",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2016-10739"
+                          },
+                          {
+                            "cve": "CVE-2018-19591",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-19591"
+                          },
+                          {
+                            "cve": "CVE-2018-20796",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-20796"
+                          },
+                          {
+                            "cve": "CVE-2019-19126",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-19126"
+                          },
+                          {
+                            "cve": "CVE-2019-25013",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-25013"
+                          },
+                          {
+                            "cve": "CVE-2019-6488",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-6488"
+                          },
+                          {
+                            "cve": "CVE-2019-7309",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-7309"
+                          },
+                          {
+                            "cve": "CVE-2019-9169",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-9169"
+                          },
+                          {
+                            "cve": "CVE-2019-9192",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-9192"
+                          },
+                          {
+                            "cve": "CVE-2020-10029",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-10029"
+                          },
+                          {
+                            "cve": "CVE-2020-1751",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-1751"
+                          },
+                          {
+                            "cve": "CVE-2020-1752",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-1752"
+                          },
+                          {
+                            "cve": "CVE-2020-27618",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-27618"
+                          },
+                          {
+                            "cve": "CVE-2020-6096",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-6096"
+                          },
+                          {
+                            "cve": "CVE-2021-3326",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3326"
+                          },
+                          {
+                            "cve": "CVE-2021-33574",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-33574"
+                          },
+                          {
+                            "cve": "CVE-2021-35942",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-35942"
+                          },
+                          {
+                            "cve": "CVE-2021-38604",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-38604"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 99,
+                        "name": "libblkid",
+                        "version": "2.32.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 100,
+                        "name": "libcom_err",
+                        "version": "1.45.6",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 101,
+                        "name": "libuuid",
+                        "version": "2.32.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 102,
+                        "name": "libxml2",
+                        "version": "2.9.7",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:xmlsoft:libxml2:2.9.7:-:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2018-14404",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-14404"
+                          },
+                          {
+                            "cve": "CVE-2019-19956",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-19956"
+                          },
+                          {
+                            "cve": "CVE-2021-3517",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3517"
+                          },
+                          {
+                            "cve": "CVE-2021-3518",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3518"
+                          },
+                          {
+                            "cve": "CVE-2021-3537",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3537"
+                          },
+                          {
+                            "cve": "CVE-2021-3541",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3541"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 103,
+                        "name": "npth",
+                        "version": "1.5",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 104,
+                        "name": "rpm-build-libs",
+                        "version": "4.14.3",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 105,
+                        "name": "dbus",
+                        "version": "1.12.8",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:freedesktop:dbus:1.12.8:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2019-12749",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-12749"
+                          },
+                          {
+                            "cve": "CVE-2020-12049",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-12049"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 106,
+                        "name": "xz-libs",
+                        "version": "5.2.4",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 107,
+                        "name": "systemd",
+                        "version": "239",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:freedesktop:systemd:239:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2018-15686",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-15686"
+                          },
+                          {
+                            "cve": "CVE-2018-15687",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-15687"
+                          },
+                          {
+                            "cve": "CVE-2018-15688",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-15688"
+                          },
+                          {
+                            "cve": "CVE-2018-16864",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-16864"
+                          },
+                          {
+                            "cve": "CVE-2018-16865",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-16865"
+                          },
+                          {
+                            "cve": "CVE-2018-16866",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-16866"
+                          },
+                          {
+                            "cve": "CVE-2018-21029",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-21029"
+                          },
+                          {
+                            "cve": "CVE-2019-20386",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-20386"
+                          },
+                          {
+                            "cve": "CVE-2019-3843",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-3843"
+                          },
+                          {
+                            "cve": "CVE-2019-3844",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-3844"
+                          },
+                          {
+                            "cve": "CVE-2019-6454",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-6454"
+                          },
+                          {
+                            "cve": "CVE-2020-13776",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-13776"
+                          },
+                          {
+                            "cve": "CVE-2020-1712",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-1712"
+                          },
+                          {
+                            "cve": "CVE-2021-33910",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-33910"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 108,
+                        "name": "libsmartcols",
+                        "version": "2.32.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 109,
+                        "name": "libsolv",
+                        "version": "0.7.11",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:opensuse:libsolv:0.7.11:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2021-3200",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3200"
+                          },
+                          {
+                            "cve": "CVE-2021-33928",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-33928"
+                          },
+                          {
+                            "cve": "CVE-2021-33929",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-33929"
+                          },
+                          {
+                            "cve": "CVE-2021-33930",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-33930"
+                          },
+                          {
+                            "cve": "CVE-2021-33938",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-33938"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 110,
+                        "name": "libutempter",
+                        "version": "1.1.6",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 111,
+                        "name": "libxcrypt",
+                        "version": "4.1.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 112,
+                        "name": "lzo",
+                        "version": "2.08",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:lzo_project:lzo:2.08:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 113,
+                        "name": "openssl-libs",
+                        "version": "1.1.1g",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 114,
+                        "name": "expat",
+                        "version": "2.2.5",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:libexpat_project:libexpat:2.2.5:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2013-0340",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2013-0340"
+                          },
+                          {
+                            "cve": "CVE-2018-20843",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-20843"
+                          },
+                          {
+                            "cve": "CVE-2019-15903",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-15903"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 115,
+                        "name": "hostname",
+                        "version": "3.20",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 116,
+                        "name": "libacl",
+                        "version": "2.2.53",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 117,
+                        "name": "libcap",
+                        "version": "2.26",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:libcap_project:libcap:2.26:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 118,
+                        "name": "libgpg-error",
+                        "version": "1.31",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnupg:libgpg-error:1.31:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 119,
+                        "name": "libnghttp2",
+                        "version": "1.33.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 120,
+                        "name": "libpcap",
+                        "version": "1.9.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:tcpdump:libpcap:1.9.1:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 121,
+                        "name": "libzstd",
+                        "version": "1.4.4",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 122,
+                        "name": "glibc-minimal-langpack",
+                        "version": "2.28",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 123,
+                        "name": "squashfs-tools",
+                        "version": "4.3",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 124,
+                        "name": "osquery",
+                        "version": "4.5.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:linuxfoundation:osquery:4.5.1:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2020-26273",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-26273"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 125,
+                        "name": "findutils",
+                        "version": "4.6.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 126,
+                        "name": "json-c",
+                        "version": "0.13.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:json-c_project:json-c:0.13.1:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2020-12762",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-12762"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 127,
+                        "name": "python3-gpg",
+                        "version": "1.13.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 128,
+                        "name": "ethtool",
+                        "version": "5.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 129,
+                        "name": "gdbm",
+                        "version": "1.18",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 130,
+                        "name": "libgcrypt",
+                        "version": "1.8.5",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnupg:libgcrypt:1.8.5:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2021-33560",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-33560"
+                          },
+                          {
+                            "cve": "CVE-2021-40528",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-40528"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 131,
+                        "name": "libmnl",
+                        "version": "1.0.4",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:netfilter:libmnl:1.0.4:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 132,
+                        "name": "libtasn1",
+                        "version": "4.13",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnu:libtasn1:4.13:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2018-1000654",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000654"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 133,
+                        "name": "libverto",
+                        "version": "0.3.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 134,
+                        "name": "mpfr",
+                        "version": "3.1.6",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 135,
+                        "name": "elfutils-libelf",
+                        "version": "0.180",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 136,
+                        "name": "libidn2",
+                        "version": "2.2.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnu:libidn2:2.2.0:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 137,
+                        "name": "python3-libcomps",
+                        "version": "0.1.11",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 138,
+                        "name": "ipcalc",
+                        "version": "0.2.4",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 139,
+                        "name": "iputils",
+                        "version": "20180629",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 140,
+                        "name": "libcurl-minimal",
+                        "version": "7.61.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 141,
+                        "name": "xz",
+                        "version": "5.2.4",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 142,
+                        "name": "ima-evm-utils",
+                        "version": "1.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 143,
+                        "name": "dhcp-common",
+                        "version": "4.3.6",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 144,
+                        "name": "kexec-tools",
+                        "version": "2.0.20",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 145,
+                        "name": "libarchive",
+                        "version": "3.3.2",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:libarchive:libarchive:3.3.2:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2017-14166",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2017-14166"
+                          },
+                          {
+                            "cve": "CVE-2017-14501",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2017-14501"
+                          },
+                          {
+                            "cve": "CVE-2017-14502",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2017-14502"
+                          },
+                          {
+                            "cve": "CVE-2017-14503",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2017-14503"
+                          },
+                          {
+                            "cve": "CVE-2018-1000877",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000877"
+                          },
+                          {
+                            "cve": "CVE-2018-1000878",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000878"
+                          },
+                          {
+                            "cve": "CVE-2018-1000879",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000879"
+                          },
+                          {
+                            "cve": "CVE-2018-1000880",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000880"
+                          },
+                          {
+                            "cve": "CVE-2019-1000019",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-1000019"
+                          },
+                          {
+                            "cve": "CVE-2019-1000020",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-1000020"
+                          },
+                          {
+                            "cve": "CVE-2019-11463",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-11463"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 146,
+                        "name": "libseccomp",
+                        "version": "2.4.3",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 147,
+                        "name": "ncurses-libs",
+                        "version": "6.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 148,
+                        "name": "platform-python",
+                        "version": "3.6.8",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 149,
+                        "name": "procps-ng",
+                        "version": "3.3.15",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:procps-ng_project:procps-ng:3.3.15:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 150,
+                        "name": "bash",
+                        "version": "4.4.19",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 151,
+                        "name": "sqlite-libs",
+                        "version": "3.26.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 152,
+                        "name": "dracut-squash",
+                        "version": "049",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 153,
+                        "name": "gawk",
+                        "version": "4.2.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 154,
+                        "name": "gdbm-libs",
+                        "version": "1.18",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 155,
+                        "name": "kmod",
+                        "version": "25",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:kernel:kmod:25:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 156,
+                        "name": "libunistring",
+                        "version": "0.9.9",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnu:libunistring:0.9.9:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 157,
+                        "name": "systemd-pam",
+                        "version": "239",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 158,
+                        "name": "centos-linux-repos",
+                        "version": "8",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 159,
+                        "name": "cpio",
+                        "version": "2.12",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnu:cpio:2.12:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2019-14866",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-14866"
+                          },
+                          {
+                            "cve": "CVE-2021-38185",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-38185"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 160,
+                        "name": "device-mapper",
+                        "version": "1.02.171",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 161,
+                        "name": "libdnf",
+                        "version": "0.48.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 162,
+                        "name": "libsepol",
+                        "version": "2.9",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:selinuxproject:libsepol:2.9:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 163,
+                        "name": "openldap",
+                        "version": "2.4.46",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:openldap:openldap:2.4.46:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2019-13057",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-13057"
+                          },
+                          {
+                            "cve": "CVE-2019-13565",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-13565"
+                          },
+                          {
+                            "cve": "CVE-2020-12243",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-12243"
+                          },
+                          {
+                            "cve": "CVE-2020-15719",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-15719"
+                          },
+                          {
+                            "cve": "CVE-2020-25692",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-25692"
+                          },
+                          {
+                            "cve": "CVE-2020-25709",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-25709"
+                          },
+                          {
+                            "cve": "CVE-2020-25710",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-25710"
+                          },
+                          {
+                            "cve": "CVE-2020-36221",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-36221"
+                          },
+                          {
+                            "cve": "CVE-2020-36222",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-36222"
+                          },
+                          {
+                            "cve": "CVE-2020-36223",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-36223"
+                          },
+                          {
+                            "cve": "CVE-2020-36224",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-36224"
+                          },
+                          {
+                            "cve": "CVE-2020-36225",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-36225"
+                          },
+                          {
+                            "cve": "CVE-2020-36226",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-36226"
+                          },
+                          {
+                            "cve": "CVE-2020-36227",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-36227"
+                          },
+                          {
+                            "cve": "CVE-2020-36228",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-36228"
+                          },
+                          {
+                            "cve": "CVE-2020-36229",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-36229"
+                          },
+                          {
+                            "cve": "CVE-2020-36230",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-36230"
+                          },
+                          {
+                            "cve": "CVE-2021-27212",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-27212"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 164,
+                        "name": "tzdata",
+                        "version": "2020d",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 165,
+                        "name": "centos-linux-release",
+                        "version": "8.3",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 166,
+                        "name": "libtirpc",
+                        "version": "1.1.4",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:libtirpc_project:libtirpc:1.1.4:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 167,
+                        "name": "libmount",
+                        "version": "2.32.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 168,
+                        "name": "libselinux",
+                        "version": "2.9",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:selinuxproject:libselinux:2.9:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 169,
+                        "name": "p11-kit",
+                        "version": "0.23.14",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:p11-kit_project:p11-kit:0.23.14:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2020-29361",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-29361"
+                          },
+                          {
+                            "cve": "CVE-2020-29362",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-29362"
+                          },
+                          {
+                            "cve": "CVE-2020-29363",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-29363"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 170,
+                        "name": "python3-libs",
+                        "version": "3.6.8",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 171,
+                        "name": "rpm-libs",
+                        "version": "4.14.3",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 172,
+                        "name": "systemd-udev",
+                        "version": "239",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 173,
+                        "name": "tar",
+                        "version": "1.30",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:archive\\:\\:tar_project:archive\\:\\:tar:1.30:*:*:*:*:perl:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2007-4829",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2007-4829"
+                          },
+                          {
+                            "cve": "CVE-2018-12015",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-12015"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 174,
+                        "name": "crypto-policies",
+                        "version": "20200713",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 175,
+                        "name": "cyrus-sasl-lib",
+                        "version": "2.1.27",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 176,
+                        "name": "libassuan",
+                        "version": "2.5.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 177,
+                        "name": "libsemanage",
+                        "version": "2.9",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:selinuxproject:libsemanage:2.9:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 178,
+                        "name": "chkconfig",
+                        "version": "1.13",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 179,
+                        "name": "filesystem",
+                        "version": "3.8",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 180,
+                        "name": "glibc-common",
+                        "version": "2.28",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 181,
+                        "name": "krb5-libs",
+                        "version": "1.18.2",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 182,
+                        "name": "less",
+                        "version": "530",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 183,
+                        "name": "libdb",
+                        "version": "5.3.28",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 184,
+                        "name": "libdb-utils",
+                        "version": "5.3.28",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 185,
+                        "name": "libkcapi",
+                        "version": "1.2.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 186,
+                        "name": "acl",
+                        "version": "2.2.53",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:acl_project:acl:2.2.53:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 187,
+                        "name": "python3-setuptools-wheel",
+                        "version": "39.2.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 188,
+                        "name": "python3-hawkey",
+                        "version": "0.48.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 189,
+                        "name": "bind-export-libs",
+                        "version": "9.11.20",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 190,
+                        "name": "libattr",
+                        "version": "2.4.48",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 191,
+                        "name": "libfdisk",
+                        "version": "2.32.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 192,
+                        "name": "libnsl2",
+                        "version": "1.2.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 193,
+                        "name": "basesystem",
+                        "version": "11",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 194,
+                        "name": "cracklib",
+                        "version": "2.9.6",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:cracklib_project:cracklib:2.9.6:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 195,
+                        "name": "dbus-common",
+                        "version": "1.12.8",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 196,
+                        "name": "libmetalink",
+                        "version": "0.1.3",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 197,
+                        "name": "libstdc++",
+                        "version": "8.3.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 198,
+                        "name": "python3-rpm",
+                        "version": "4.14.3",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 199,
+                        "name": "audit-libs",
+                        "version": "3.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 200,
+                        "name": "libkcapi-hmaccalc",
+                        "version": "1.2.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 201,
+                        "name": "cryptsetup-libs",
+                        "version": "2.3.3",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 202,
+                        "name": "gnupg2",
+                        "version": "2.2.20",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 203,
+                        "name": "gzip",
+                        "version": "1.9",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnu:gzip:1.9:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 204,
+                        "name": "libsigsegv",
+                        "version": "2.11",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 205,
+                        "name": "pcre",
+                        "version": "8.42",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:pcre:pcre:8.42:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2019-20838",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-20838"
+                          },
+                          {
+                            "cve": "CVE-2020-14155",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-14155"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 206,
+                        "name": "util-linux",
+                        "version": "2.32.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:kernel:util-linux:2.32.1:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2021-37600",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-37600"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 207,
+                        "name": "device-mapper-libs",
+                        "version": "1.02.171",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 208,
+                        "name": "grep",
+                        "version": "3.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 209,
+                        "name": "ncurses-base",
+                        "version": "6.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 210,
+                        "name": "python3-pip-wheel",
+                        "version": "9.0.3",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 211,
+                        "name": "readline",
+                        "version": "7.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnu:readline:7.0:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 212,
+                        "name": "rpm",
+                        "version": "4.14.3",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:rpm:rpm:4.14.3:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2021-20266",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-20266"
+                          },
+                          {
+                            "cve": "CVE-2021-3421",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3421"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 213,
+                        "name": "file-libs",
+                        "version": "5.33",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 214,
+                        "name": "centos-gpg-keys",
+                        "version": "8",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 215,
+                        "name": "ca-certificates",
+                        "version": "2020.2.41",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 216,
+                        "name": "elfutils-libs",
+                        "version": "0.180",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 217,
+                        "name": "keyutils-libs",
+                        "version": "1.5.10",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 218,
+                        "name": "libcomps",
+                        "version": "0.1.11",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:rpm:libcomps:0.1.11:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 219,
+                        "name": "libffi",
+                        "version": "3.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:libffi_project:libffi:3.1:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 220,
+                        "name": "libpwquality",
+                        "version": "1.4.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 221,
+                        "name": "rootfiles",
+                        "version": "8.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 222,
+                        "name": "zlib",
+                        "version": "1.2.11",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnu:zlib:1.2.11:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 223,
+                        "name": "coreutils-single",
+                        "version": "8.30",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 224,
+                        "name": "langpacks-en",
+                        "version": "1.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 225,
+                        "name": "libreport-filesystem",
+                        "version": "2.9.5",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 226,
+                        "name": "gmp",
+                        "version": "6.1.2",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gmplib:gmp:6.1.2:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 227,
+                        "name": "dnf",
+                        "version": "4.2.23",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 228,
+                        "name": "vim-minimal",
+                        "version": "8.0.1763",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 229,
+                        "name": "dbus-tools",
+                        "version": "1.12.8",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 230,
+                        "name": "libyaml",
+                        "version": "0.1.7",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 231,
+                        "name": "pam",
+                        "version": "1.3.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:linux-pam:linux-pam:1.3.1:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 232,
+                        "name": "shadow-utils",
+                        "version": "4.6",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 233,
+                        "name": "snappy",
+                        "version": "1.1.8",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 234,
+                        "name": "binutils",
+                        "version": "2.30",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnu:binutils:2.30:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2018-1000876",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000876"
+                          },
+                          {
+                            "cve": "CVE-2018-10372",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-10372"
+                          },
+                          {
+                            "cve": "CVE-2018-10373",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-10373"
+                          },
+                          {
+                            "cve": "CVE-2018-10534",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-10534"
+                          },
+                          {
+                            "cve": "CVE-2018-10535",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-10535"
+                          },
+                          {
+                            "cve": "CVE-2018-12641",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-12641"
+                          },
+                          {
+                            "cve": "CVE-2018-12697",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-12697"
+                          },
+                          {
+                            "cve": "CVE-2018-12698",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-12698"
+                          },
+                          {
+                            "cve": "CVE-2018-12699",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-12699"
+                          },
+                          {
+                            "cve": "CVE-2018-12700",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-12700"
+                          },
+                          {
+                            "cve": "CVE-2018-12934",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-12934"
+                          },
+                          {
+                            "cve": "CVE-2018-13033",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-13033"
+                          },
+                          {
+                            "cve": "CVE-2018-19931",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-19931"
+                          },
+                          {
+                            "cve": "CVE-2018-19932",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-19932"
+                          },
+                          {
+                            "cve": "CVE-2018-20671",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-20671"
+                          },
+                          {
+                            "cve": "CVE-2018-6543",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-6543"
+                          },
+                          {
+                            "cve": "CVE-2018-6759",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-6759"
+                          },
+                          {
+                            "cve": "CVE-2018-6872",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-6872"
+                          },
+                          {
+                            "cve": "CVE-2018-7208",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-7208"
+                          },
+                          {
+                            "cve": "CVE-2018-7568",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-7568"
+                          },
+                          {
+                            "cve": "CVE-2018-7569",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-7569"
+                          },
+                          {
+                            "cve": "CVE-2018-7570",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-7570"
+                          },
+                          {
+                            "cve": "CVE-2018-7642",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-7642"
+                          },
+                          {
+                            "cve": "CVE-2018-7643",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-7643"
+                          },
+                          {
+                            "cve": "CVE-2018-8945",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-8945"
+                          },
+                          {
+                            "cve": "CVE-2018-9138",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-9138"
+                          },
+                          {
+                            "cve": "CVE-2018-9996",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-9996"
+                          },
+                          {
+                            "cve": "CVE-2019-1010204",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-1010204"
+                          },
+                          {
+                            "cve": "CVE-2020-35493",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-35493"
+                          },
+                          {
+                            "cve": "CVE-2020-35494",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-35494"
+                          },
+                          {
+                            "cve": "CVE-2020-35495",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-35495"
+                          },
+                          {
+                            "cve": "CVE-2020-35496",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-35496"
+                          },
+                          {
+                            "cve": "CVE-2020-35507",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-35507"
+                          },
+                          {
+                            "cve": "CVE-2021-20197",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-20197"
+                          },
+                          {
+                            "cve": "CVE-2021-20294",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-20294"
+                          },
+                          {
+                            "cve": "CVE-2021-3487",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3487"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 235,
+                        "name": "kmod-libs",
+                        "version": "25",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 236,
+                        "name": "popt",
+                        "version": "1.16",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:popt_project:popt:1.16:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 237,
+                        "name": "yum",
+                        "version": "4.2.23",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 238,
+                        "name": "curl",
+                        "version": "7.61.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:haxx:curl:7.61.1:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2018-16839",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-16839"
+                          },
+                          {
+                            "cve": "CVE-2018-16840",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-16840"
+                          },
+                          {
+                            "cve": "CVE-2018-16842",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2018-16842"
+                          },
+                          {
+                            "cve": "CVE-2019-5481",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-5481"
+                          },
+                          {
+                            "cve": "CVE-2019-5482",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-5482"
+                          },
+                          {
+                            "cve": "CVE-2020-8284",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-8284"
+                          },
+                          {
+                            "cve": "CVE-2021-22897",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-22897"
+                          },
+                          {
+                            "cve": "CVE-2021-22898",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-22898"
+                          },
+                          {
+                            "cve": "CVE-2021-22922",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-22922"
+                          },
+                          {
+                            "cve": "CVE-2021-22923",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-22923"
+                          },
+                          {
+                            "cve": "CVE-2021-22925",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-22925"
+                          },
+                          {
+                            "cve": "CVE-2021-22926",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-22926"
+                          },
+                          {
+                            "cve": "CVE-2021-22946",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-22946"
+                          },
+                          {
+                            "cve": "CVE-2021-22947",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-22947"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 239,
+                        "name": "dhcp-client",
+                        "version": "4.3.6",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 240,
+                        "name": "dracut",
+                        "version": "049",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:kernel:dracut:049:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 241,
+                        "name": "glib2",
+                        "version": "2.56.4",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 242,
+                        "name": "gpgme",
+                        "version": "1.13.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnupg:gpgme:1.13.1:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 243,
+                        "name": "iproute",
+                        "version": "5.3.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 244,
+                        "name": "libksba",
+                        "version": "1.3.5",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:libksba_project:libksba:1.3.5:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 245,
+                        "name": "pcre2",
+                        "version": "10.32",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:pcre:pcre2:10.32:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2019-20454",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2019-20454"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 246,
+                        "name": "dbus-libs",
+                        "version": "1.12.8",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 247,
+                        "name": "platform-python-setuptools",
+                        "version": "39.2.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 248,
+                        "name": "dracut-network",
+                        "version": "049",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 249,
+                        "name": "elfutils-default-yama-scope",
+                        "version": "0.180",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 250,
+                        "name": "iptables-libs",
+                        "version": "1.8.4",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 251,
+                        "name": "nettle",
+                        "version": "3.4.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:nettle_project:nettle:3.4.1:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2021-20305",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-20305"
+                          },
+                          {
+                            "cve": "CVE-2021-3580",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3580"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 252,
+                        "name": "python3-dnf",
+                        "version": "4.2.23",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 253,
+                        "name": "setuptools",
+                        "version": "39.2.0",
+                        "source": "python_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 254,
+                        "name": "dnf-data",
+                        "version": "4.2.23",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 255,
+                        "name": "libcap-ng",
+                        "version": "0.7.9",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:libcap-ng_project:libcap-ng:0.7.9:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 256,
+                        "name": "systemd-libs",
+                        "version": "239",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 257,
+                        "name": "info",
+                        "version": "6.5",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 258,
+                        "name": "libusbx",
+                        "version": "1.0.23",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 259,
+                        "name": "bzip2-libs",
+                        "version": "1.0.6",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 260,
+                        "name": "libgcc",
+                        "version": "8.3.1",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 261,
+                        "name": "lua-libs",
+                        "version": "5.3.4",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 262,
+                        "name": "p11-kit-trust",
+                        "version": "0.23.14",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 263,
+                        "name": "setup",
+                        "version": "2.12.2",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:redhat:setup:2.12.2:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 264,
+                        "name": "gnutls",
+                        "version": "3.6.14",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnu:gnutls:3.6.14:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2020-24659",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-24659"
+                          },
+                          {
+                            "cve": "CVE-2021-20231",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-20231"
+                          },
+                          {
+                            "cve": "CVE-2021-20232",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-20232"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 265,
+                        "name": "sed",
+                        "version": "4.5",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:gnu:sed:4.5:*:*:*:*:*:*:*",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 266,
+                        "name": "lz4-libs",
+                        "version": "1.8.3",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 267,
+                        "name": "dhcp-libs",
+                        "version": "4.3.6",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 268,
+                        "name": "libmodulemd",
+                        "version": "2.9.4",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 269,
+                        "name": "librepo",
+                        "version": "1.12.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "cpe:2.3:a:redhat:librepo:1.12.0:*:*:*:*:*:*:*",
+                        "vulnerabilities": [
+                          {
+                            "cve": "CVE-2020-14352",
+                            "details_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-14352"
+                          }
+                        ]
+                      },
+                      {
+                        "id": 270,
+                        "name": "python3-libdnf",
+                        "version": "0.48.0",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      },
+                      {
+                        "id": 271,
+                        "name": "dbus-daemon",
+                        "version": "1.12.8",
+                        "source": "rpm_packages",
+                        "generated_cpe": "",
+                        "vulnerabilities": null
+                      }
+                    ],
+                    "id": 1,
+                    "detail_updated_at": "2021-11-08T20:19:44Z",
+                    "label_updated_at": "2021-11-08T20:37:07Z",
+                    "policy_updated_at": "1970-01-02T00:00:00Z",
+                    "last_enrolled_at": "2021-11-03T03:52:09Z",
+                    "seen_time": "2021-11-08T20:43:11Z",
+                    "refetch_requested": false,
+                    "hostname": "7cce2292a94c",
+                    "uuid": "b14a1901-fe88-451a-8212-02c396e2cbb8",
+                    "platform": "rhel",
+                    "osquery_version": "4.5.1",
+                    "os_version": "CentOS Linux 8.3.2011",
+                    "build": "",
+                    "platform_like": "rhel",
+                    "code_name": "",
+                    "uptime": 492638000000000,
+                    "memory": 1028972544,
+                    "cpu_type": "x86_64",
+                    "cpu_subtype": "63",
+                    "cpu_brand": "DO-Regular",
+                    "cpu_physical_cores": 1,
+                    "cpu_logical_cores": 1,
+                    "hardware_vendor": "",
+                    "hardware_model": "",
+                    "hardware_version": "",
+                    "hardware_serial": "",
+                    "computer_name": "7cce2292a94c",
+                    "primary_ip": "172.18.0.4",
+                    "primary_mac": "02:42:ac:12:00:04",
+                    "distributed_interval": 10,
+                    "config_tls_refresh": 10,
+                    "logger_tls_period": 10,
+                    "team_id": null,
+                    "pack_stats": null,
+                    "team_name": null,
+                    "users": [
+                      {
+                        "uid": 0,
+                        "username": "root",
+                        "type": "",
+                        "groupname": "root"
+                      },
+                      {
+                        "uid": 1,
+                        "username": "bin",
+                        "type": "",
+                        "groupname": "bin"
+                      },
+                      {
+                        "uid": 2,
+                        "username": "daemon",
+                        "type": "",
+                        "groupname": "daemon"
+                      },
+                      {
+                        "uid": 3,
+                        "username": "adm",
+                        "type": "",
+                        "groupname": "adm"
+                      },
+                      {
+                        "uid": 4,
+                        "username": "lp",
+                        "type": "",
+                        "groupname": "lp"
+                      },
+                      {
+                        "uid": 5,
+                        "username": "sync",
+                        "type": "",
+                        "groupname": "root"
+                      },
+                      {
+                        "uid": 6,
+                        "username": "shutdown",
+                        "type": "",
+                        "groupname": "root"
+                      },
+                      {
+                        "uid": 7,
+                        "username": "halt",
+                        "type": "",
+                        "groupname": "root"
+                      },
+                      {
+                        "uid": 8,
+                        "username": "mail",
+                        "type": "",
+                        "groupname": "mail"
+                      },
+                      {
+                        "uid": 11,
+                        "username": "operator",
+                        "type": "",
+                        "groupname": "root"
+                      },
+                      {
+                        "uid": 12,
+                        "username": "games",
+                        "type": "",
+                        "groupname": "users"
+                      },
+                      {
+                        "uid": 14,
+                        "username": "ftp",
+                        "type": "",
+                        "groupname": "ftp"
+                      },
+                      {
+                        "uid": 81,
+                        "username": "dbus",
+                        "type": "",
+                        "groupname": "dbus"
+                      },
+                      {
+                        "uid": 193,
+                        "username": "systemd-resolve",
+                        "type": "",
+                        "groupname": "systemd-resolve"
+                      },
+                      {
+                        "uid": 999,
+                        "username": "systemd-coredump",
+                        "type": "",
+                        "groupname": "systemd-coredump"
+                      },
+                      {
+                        "uid": 65534,
+                        "username": "nobody",
+                        "type": "",
+                        "groupname": "nobody"
+                      }
+                    ],
+                    "gigs_disk_space_available": 20.1,
+                    "percent_disk_space_available": 77,
+                    "issues": {
+                      "total_issues_count": 0,
+                      "failing_policies_count": 0
+                    },
+                    "labels": [
+                      {
+                        "created_at": "2021-10-04T16:21:47Z",
+                        "updated_at": "2021-10-04T16:21:47Z",
+                        "id": 6,
+                        "name": "All Hosts",
+                        "description": "All hosts which have enrolled in Fleet",
+                        "query": "select 1;",
+                        "platform": "",
+                        "label_type": "builtin",
+                        "label_membership_type": "dynamic"
+                      },
+                      {
+                        "created_at": "2021-10-04T16:21:47Z",
+                        "updated_at": "2021-10-04T16:21:47Z",
+                        "id": 9,
+                        "name": "CentOS Linux",
+                        "description": "All CentOS hosts",
+                        "query": "select 1 from os_version where platform = 'centos' or name like '%centos%'",
+                        "platform": "",
+                        "label_type": "builtin",
+                        "label_membership_type": "dynamic"
+                      },
+                      {
+                        "created_at": "2021-10-04T16:21:47Z",
+                        "updated_at": "2021-10-04T16:21:47Z",
+                        "id": 12,
+                        "name": "All Linux",
+                        "description": "All Linux distributions",
+                        "query": "SELECT 1 FROM osquery_info WHERE build_platform LIKE '%ubuntu%' OR build_distro LIKE '%centos%';",
+                        "platform": "",
+                        "label_type": "builtin",
+                        "label_membership_type": "dynamic"
+                      }
+                    ],
+                    "packs": [
+                      {
+                        "created_at": "2021-11-03T02:34:13Z",
+                        "updated_at": "2021-11-03T02:34:13Z",
+                        "id": 1,
+                        "name": "Global",
+                        "description": "Global pack",
+                        "type": "global",
+                        "label_ids": null,
+                        "host_ids": null,
+                        "team_ids": null
+                      }
+                    ],
+                    "policies": null,
+                    "status": "online",
+                    "display_text": "7cce2292a94c"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/fleet/hosts/count": {
+      "get": {
+        "tags": [
+          "Hosts"
+        ],
+        "summary": "Hosts Count",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 29 Oct 2021 05:00:46 GMT"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "17"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "count": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/fleet/hosts/delete": {
+      "post": {
+        "tags": [
+          "Hosts"
+        ],
+        "summary": "Bulk Delete Hosts",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "ids": [
+                    567,
+                    789
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/fleet/labels": {
+      "get": {
+        "tags": [
+          "Labels"
+        ],
+        "summary": "Labels",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 08 Nov 2021 20:45:00 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "gzip"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "Expect-CT": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "6ab1a47bdd5e12a3-MIA"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "labels": [
+                    {
+                      "created_at": "2021-10-04T16:21:47Z",
+                      "updated_at": "2021-10-04T16:21:47Z",
+                      "id": 6,
+                      "name": "All Hosts",
+                      "description": "All hosts which have enrolled in Fleet",
+                      "query": "select 1;",
+                      "platform": "",
+                      "label_type": "builtin",
+                      "label_membership_type": "dynamic",
+                      "host_count": 8,
+                      "display_text": "All Hosts",
+                      "count": 8,
+                      "host_ids": null
+                    },
+                    {
+                      "created_at": "2021-10-04T16:21:47Z",
+                      "updated_at": "2021-10-04T16:21:47Z",
+                      "id": 7,
+                      "name": "macOS",
+                      "description": "All macOS hosts",
+                      "query": "select 1 from os_version where platform = 'darwin';",
+                      "platform": "",
+                      "label_type": "builtin",
+                      "label_membership_type": "dynamic",
+                      "display_text": "macOS",
+                      "count": 0,
+                      "host_ids": null
+                    },
+                    {
+                      "created_at": "2021-10-04T16:21:47Z",
+                      "updated_at": "2021-10-04T16:21:47Z",
+                      "id": 8,
+                      "name": "Ubuntu Linux",
+                      "description": "All Ubuntu hosts",
+                      "query": "select 1 from os_version where platform = 'ubuntu';",
+                      "platform": "",
+                      "label_type": "builtin",
+                      "label_membership_type": "dynamic",
+                      "host_count": 4,
+                      "display_text": "Ubuntu Linux",
+                      "count": 4,
+                      "host_ids": null
+                    },
+                    {
+                      "created_at": "2021-10-04T16:21:47Z",
+                      "updated_at": "2021-10-04T16:21:47Z",
+                      "id": 9,
+                      "name": "CentOS Linux",
+                      "description": "All CentOS hosts",
+                      "query": "select 1 from os_version where platform = 'centos' or name like '%centos%'",
+                      "platform": "",
+                      "label_type": "builtin",
+                      "label_membership_type": "dynamic",
+                      "host_count": 3,
+                      "display_text": "CentOS Linux",
+                      "count": 3,
+                      "host_ids": null
+                    },
+                    {
+                      "created_at": "2021-10-04T16:21:47Z",
+                      "updated_at": "2021-10-04T16:21:47Z",
+                      "id": 10,
+                      "name": "MS Windows",
+                      "description": "All Windows hosts",
+                      "query": "select 1 from os_version where platform = 'windows';",
+                      "platform": "",
+                      "label_type": "builtin",
+                      "label_membership_type": "dynamic",
+                      "host_count": 1,
+                      "display_text": "MS Windows",
+                      "count": 1,
+                      "host_ids": null
+                    },
+                    {
+                      "created_at": "2021-10-04T16:21:47Z",
+                      "updated_at": "2021-10-04T16:21:47Z",
+                      "id": 11,
+                      "name": "Red Hat Linux",
+                      "description": "All Red Hat Enterprise Linux hosts",
+                      "query": "SELECT 1 FROM os_version WHERE name LIKE '%red hat%'",
+                      "platform": "",
+                      "label_type": "builtin",
+                      "label_membership_type": "dynamic",
+                      "display_text": "Red Hat Linux",
+                      "count": 0,
+                      "host_ids": null
+                    },
+                    {
+                      "created_at": "2021-10-04T16:21:47Z",
+                      "updated_at": "2021-10-04T16:21:47Z",
+                      "id": 12,
+                      "name": "All Linux",
+                      "description": "All Linux distributions",
+                      "query": "SELECT 1 FROM osquery_info WHERE build_platform LIKE '%ubuntu%' OR build_distro LIKE '%centos%';",
+                      "platform": "",
+                      "label_type": "builtin",
+                      "label_membership_type": "dynamic",
+                      "host_count": 7,
+                      "display_text": "All Linux",
+                      "count": 7,
+                      "host_ids": null
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/fleet/labels/{label_id}": {
+      "get": {
+        "tags": [
+          "Labels"
+        ],
+        "summary": "Label by ID",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "label_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 08 Nov 2021 20:46:54 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "240"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "gzip"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "Expect-CT": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "6ab1a744ecff12a3-MIA"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "label": {
+                    "created_at": "2021-10-04T16:21:47Z",
+                    "updated_at": "2021-10-04T16:21:47Z",
+                    "id": 6,
+                    "name": "All Hosts",
+                    "description": "All hosts which have enrolled in Fleet",
+                    "query": "select 1;",
+                    "platform": "",
+                    "label_type": "builtin",
+                    "label_membership_type": "dynamic",
+                    "host_count": 8,
+                    "display_text": "All Hosts",
+                    "count": 8,
+                    "host_ids": null
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/fleet/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "List Users",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/fleet/software": {
+      "get": {
+        "tags": [
+          "Software"
+        ],
+        "summary": "Software",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/fleet/login": {
+      "post": {
+        "tags": [
+          "General"
+        ],
+        "summary": "Login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "{{email}}",
+                  "password": "{{password}}"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 21 Oct 2021 03:39:00 GMT"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "431"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "user": {
+                    "created_at": "2021-10-20T19:42:02Z",
+                    "updated_at": "2021-10-20T19:42:02Z",
+                    "id": 1,
+                    "name": "Fleet Admin",
+                    "email": "admin@fleetdm.com",
+                    "force_password_reset": false,
+                    "gravatar_url": "",
+                    "sso_enabled": false,
+                    "global_role": "admin",
+                    "api_only": false,
+                    "teams": []
+                  },
+                  "token": "WDlCG6JKF7DcUpZhiAzsRlcd/7PrFcYaUmuBeryfMUCtypOgZs5MqO1VR2mK5+62ZKdwuBIx0he6MkPs2SpBzg=="
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 21 Oct 2021 03:40:13 GMT"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "134"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "Authentication failed",
+                  "errors": [
+                    {
+                      "name": "base",
+                      "reason": "Authentication failed"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
