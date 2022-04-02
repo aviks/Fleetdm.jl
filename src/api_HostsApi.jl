@@ -100,4 +100,31 @@ function apiV1FleetHostsHostIdGet(_api::HostsApi, response_stream::Channel, host
     Swagger.exec(_ctx, response_stream)
 end
 
-export apiV1FleetHostsCountGet, apiV1FleetHostsDeletePost, apiV1FleetHostsGet, apiV1FleetHostsHostIdGet
+
+function _swaggerinternal_apiV1FleetHostsDeviceMappingGet(_api::HostsApi, host_id::String; _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "GET", Any, "/api/v1/fleet/hosts/{host_id}/device_mapping", ["bearerAuth"])
+    Swagger.set_param(_ctx.path, "host_id", host_id)  # type String
+    Swagger.set_header_accept(_ctx, ["application/json"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
+    return _ctx
+end
+
+@doc raw"""Get Host Device Mapping
+
+Params:
+- host_id::String (required)
+
+Return: Any
+"""
+function apiV1FleetHostsDeviceMappingGet(_api::HostsApi, host_id::String; _mediaType=nothing)
+    _ctx = _swaggerinternal_apiV1FleetHostsDeviceMappingGet(_api, host_id; _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function apiV1FleetHostsDeviceMappingGet(_api::HostsApi, response_stream::Channel, host_id::String; _mediaType=nothing)
+    _ctx = _swaggerinternal_apiV1FleetHostsDeviceMappingGet(_api, host_id; _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+
+export apiV1FleetHostsCountGet, apiV1FleetHostsDeletePost, apiV1FleetHostsGet, apiV1FleetHostsHostIdGet, apiV1FleetHostsDeviceMappingGet
