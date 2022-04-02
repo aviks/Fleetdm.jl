@@ -1,6 +1,6 @@
 # Fleetdm
 
-[![version](https://docs.juliahub.com//SlackSDK/version.svg)](https://juliahub.com/ui/Packages/Fleetdm/8MvHX)
+[![version](https://docs.juliahub.com//Fleetdm/version.svg)](https://juliahub.com/ui/Packages/Fleetdm/8MvHX)
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://docs.juliahub.com/Fleetdm/8MvHX)
 [![Build Status](https://github.com/aviks/Fleetdm.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/aviks/Fleetdm.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
